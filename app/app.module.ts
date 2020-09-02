@@ -7,12 +7,14 @@ import { AboutPage } from "../pages/about/about";
 import { ContactPage } from "../pages/contact/contact";
 import { HomePage } from "../pages/home/home";
 import { TabsPage } from "../pages/tabs/tabs";
+import { ArticleService } from "./article.service";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [MyApp, AboutPage, ContactPage, HomePage, TabsPage],
-  imports: [BrowserModule, IonicModule.forRoot(MyApp)],
+  imports: [BrowserModule, IonicModule.forRoot(MyApp), HttpClientModule],
   bootstrap: [IonicApp],
   entryComponents: [MyApp, AboutPage, ContactPage, HomePage, TabsPage],
-  providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]
+  providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler },ArticleService]
 })
 export class AppModule {}
